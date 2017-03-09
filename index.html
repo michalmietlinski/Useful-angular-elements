@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html ng-app="game">
+<head>
+	<title>Memory Skill Game</title>
+
+	<script src="angular.js"></script>
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+	<script src="controller.js"></script>
+
+	<link href="http://fonts.googleapis.com/css?family=Open+Sans|Open+Sans+Condensed:300" rel="stylesheet" type="text/css" />
+	<link href="https://fonts.googleapis.com/css?family=Lobster&subset=latin,vietnamese,latin-ext,cyrillic" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" type="text/css" href="style.css" />
+
+	<link rel="shortcut icon" href="images/favicon.png" type="image/x-icon" />
+	<link rel="bookmark" href="images/favicon.png" type="image/x-icon" />
+</head>
+
+<body ng-controller="mainController">
+	<section class="header">
+		<div class="wrapper">
+			<h1>Angular modals... and stuff</h1>
+		</div>
+	</section>
+	<section class="main">
+		<div class="wrapper">
+				{{text}}
+		</div>
+	</section>
+	<section class="main">
+		<div class="wrapper">
+			<h2>Pagination</h2>
+			<div class="options">
+			 <div class="option">
+			 	<h3> Items per page</h3>
+			 	<input type="number" ng-model="fieldsPerPage">
+			 </div>
+			 <div class="option">
+			 	<h3> Current page</h3>
+			 	<input type="number" ng-model="currentPage" ng-change="currentPage=setindex(objects,fieldsPerPage,currentPage)">
+			 </div>
+			</div>
+				<div ng-repeat="obj in objects track by $index" ng-hide="((currentPage-1)*fieldsPerPage)>=($index+1)||($index+1)>(currentPage*fieldsPerPage)">
+					{{obj}} -- {{$index}}
+				</div>
+<div class="pagination"><div class="arrow" ng-click="currentPage=goleft(currentPage)"><</div><div class="arrow" ng-click="currentPage=goright(objects,fieldsPerPage,currentPage)">></div><div class="choosenum">GO TO: <input type="number" ng-model="currentPage" ng-change="currentPage=setindex(objects,fieldsPerPage,currentPage)">Page <span ng-bind="num"></span> of {{lengthof(objects,fieldsPerPage)}} </div>
+
+		</div>
+	</section>
+
+
+		<footer>
+			<div class="wrapper">
+			&copy;2017 &reg; MM
+			</div>
+		</footer>
+	
+</body>
+
+</html>
