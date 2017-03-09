@@ -7,7 +7,7 @@ app.controller('mainController', ['$scope',
         $scope.objects = {};
         $scope.currentPage = 1;
         $scope.fieldsPerPage = 10;
-        for (var i = 0; i < 100; i++) {
+        for (var i = 0; i < 105; i++) {
             $scope.objects[i] = i;
         }
 
