@@ -70,3 +70,10 @@ footer, .options{
 footer{
  padding-top:2vw;
 }
+
+
+/*Validator */
+.form{
+    width:33%;float:left;
+    
+}

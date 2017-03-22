@@ -57,5 +57,11 @@ app.controller('mainController', ['$scope',
             }
             return temp2;
         }
+
+
+        //Validator
+        $scope.update = function() {
+           alert("done!")
+          };
     }
 ]);
