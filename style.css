@@ -26,8 +26,14 @@ h2{
 }
 .main {
     padding-top: 2vw;
+	    width:100%;
+		clear:both;
 }
-
+.input-wrapper{
+	width:200px;
+	overflow:visible;
+	position:relative;
+}
 .pagination {
     padding-left: 20px;
     display: block;

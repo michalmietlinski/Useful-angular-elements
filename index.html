@@ -11,7 +11,7 @@
 	<link href="http://fonts.googleapis.com/css?family=Open+Sans|Open+Sans+Condensed:300" rel="stylesheet" type="text/css" />
 	<link href="https://fonts.googleapis.com/css?family=Lobster&subset=latin,vietnamese,latin-ext,cyrillic" rel="stylesheet" type="text/css" />
 	<link rel="stylesheet" type="text/css" href="style.css" />
-
+<link rel="stylesheet" type="text/css" href="birthdate-directive.css" />
 	<link rel="shortcut icon" href="images/favicon.png" type="image/x-icon" />
 	<link rel="bookmark" href="images/favicon.png" type="image/x-icon" />
 </head>
@@ -46,6 +46,19 @@
 <div class="pagination"><div class="arrow" ng-click="currentPage=goleft(currentPage)"><</div><div class="arrow" ng-click="currentPage=goright(objects,fieldsPerPage,currentPage)">></div><div class="choosenum">GO TO: <input type="number" ng-model="currentPage" ng-change="currentPage=setindex(objects,fieldsPerPage,currentPage)">Page <span ng-bind="num"></span> of {{lengthof(objects,fieldsPerPage)}} </div>
 
 		</div>
+	
+	
+	</section>
+	<section class="main">
+	
+
+<div class="wrapper">
+<div class="input-wrapper">
+
+ <input type="text" name="Birthdate" ng-model="Birthdate" ng-click="openpopup()" ng-keydown="ignore($event)">
+    <birthdaypicker-Directive></birthdaypicker-Directive>
+	</div>
+	</div>
 	</section>
 <!-- <section class="main">
 		<div class="wrapper">
@@ -79,5 +92,31 @@
 		</footer>
 	
 </body>
+<script type="text/ng-template" id="birthdaypicker.html">
 
+	
+
+
+<div class="birthday-datepicker">
+    <div ng-show="infoPopup" class="ui-datepicker" id="calendar-modal" tabindex="-1" ><!--ng-blur="infopopup=false"-->
+    <div class="inner-calendar" >
+        <div class="years" ng-bind="chosenYear" ng-click="yearpopup=true"></div>
+        <div class="year-popup" ng-show="yearpopup">
+            <ul>
+                <li ng-repeat="year in availlableYears" ng-click="chooseyear(year)">{{year}}</li>
+                
+            </ul>
+        </div>
+        
+        <div class="month"><span ng-click="prevmonth()" class="arrow">&#8592;</span><span ng-click="monthpopup()" ng-bind="monthNames[chosenMonth]"></span><span ng-click="nextmonth()" class="arrow">&#8594;</span></div>
+        <div class="day">
+            <div class="single-day" ng-repeat="day in dayNamesShort track by $index" ng-click="">{{day}}</div>
+            <div class="single-day" ng-repeat="day in availlableDays track by $index" ng-click="chooseday(day)">{{day}}</div>
+        </div>
+        
+    </div>
+    <!--<div ng-click="infopopup=false">close</div>-->
+</div>
+</div>
+</script>
 </html>

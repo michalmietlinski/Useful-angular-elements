@@ -1,0 +1,77 @@
+.birthday-datepicker {
+    width: 100%;
+    position: relative;
+
+    #calendar-modal {
+        width: 100%;
+        position: absolute;
+        outline: 0;
+    }
+
+    .inner-calendar {
+        background: #fff;
+        border-radius: 10px;
+        color: #000;
+    }
+
+    .inner-calendar .years {
+        display: inline-block;
+        margin-right: 20px;
+        font-size: 20px;
+        font-weight: 700;
+        border: 1px solid #000;
+        border-radius: 3px;
+        margin: 6px 50px 4px 5px;
+        padding: 0px 4px;
+        cursor: pointer;
+    }
+
+    .inner-calendar .month {
+        font-size: 20px;
+        font-weight: 700;
+        display: inline-block;
+        cursor: pointer;
+    }
+
+    .inner-calendar .month span {
+        min-width: 35px;
+        text-align: center;
+        display: inline-block;
+    }
+
+    .inner-calendar .month .arrow {
+        cursor: pointer;
+    }
+
+    .inner-calendar .year-popup {
+        position: absolute;
+        height: 250px;
+        width: 100px;
+        overflow-y: scroll;
+        z-index: 10000;
+        background: #fff;
+        left: 40%;
+        transform: translateX(-50%);
+
+        /* top: 100%; */
+        font-size: 20px;
+        cursor: pointer;
+    }
+
+    .inner-calendar .day {
+        text-align: left;
+        padding: 10px;
+    }
+
+    .inner-calendar .day .single-day {
+        width: 14.2%;
+        cursor: pointer;
+        text-align: center;
+        display: inline-block;
+        color: #000;
+        font-size: 17px;
+        font-weight: 700;
+        text-decoration: none;
+        padding: 3px;
+    }
+}
